@@ -22,5 +22,5 @@ Projet d'évaluation Data Engineering & MLOps - Pipeline end-to-end de prédicti
 - `YDFPGGMT4IKRW2VB/` → Application Streamlit
 
 ## Auteur
-Ines Hideche 
+Ines Hideche &
 Camille Thauvin
