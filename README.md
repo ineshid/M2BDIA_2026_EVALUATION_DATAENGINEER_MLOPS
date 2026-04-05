@@ -108,3 +108,32 @@ généralisation grâce à la validation croisée.
 
 - `INESINESHIDECHE 2026-04-01 12:45:19/` → Notebook Snowflake (pipeline ML complet)
 - `streamlit_app/` → Application Streamlit
+
+
+---
+
+## Comment reproduire le projet
+
+### Prérequis
+- Un compte Snowflake actif
+- Les packages Python : `scikit-learn`, `xgboost`, `snowflake-ml-python`
+
+### Étapes
+
+1. **Importer le notebook** dans Snowflake
+   - Aller dans Snowflake → Projects → Notebooks
+   - Cliquer sur "Import" et charger le fichier `pipeline_ml/INESINESHIDECHE 2026-04-01 12:45:19.ipynb`
+
+2. **Exécuter les cellules dans l'ordre**, de cell1 à cell23
+
+3. **Ce que le pipeline fait automatiquement :**
+   - Crée la base `HOUSE_PRICE_DB` et le schéma `ML`
+   - Charge les données depuis S3
+   - Entraîne et compare 4 modèles
+   - Optimise le meilleur modèle via RandomizedSearchCV
+   - Enregistre le modèle dans le Snowflake Model Registry
+   - Stocke les prédictions dans la table `HOUSE_PRICE_PREDICTIONS`
+
+4. **Lancer l'application Streamlit**
+   - Aller dans Snowflake → Projects → Streamlit
+   - Importer `streamlit_app/streamlit_app.py`
